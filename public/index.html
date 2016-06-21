@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My App</title>
+    </head>
+    <body ng-app="app" ng-controller="appCtrl">
+        <div id="main-wrapper">
+            <div header class="row"></div>
+            <div class="main-content container">
+                <div class="col-lg-12 container">
+                    <div ui-view></div>
+                </div>
+            </div>
+
+            <div footer></div>
+        </div>
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="site.css" rel="stylesheet" type="text/css">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="app.js"></script>
+        <script src="controllers/aboutCtrl.js"></script>
+        <script src="controllers/landingPageCtrl.js"></script>
+    </body>
+</html>

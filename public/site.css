@@ -1,0 +1,30 @@
+.topnav {
+    font-size: 14px;
+}
+.main-content{
+    padding-top: 100px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#main-wrapper {
+    min-height: 100%;
+    padding: 0 0 100px;
+    position: relative;
+}
+
+footer {
+    bottom: 0;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    margin-top: 30px;
+    background-color: #f8f8f8;
+    padding-top: 30px;
+}
