@@ -5,6 +5,7 @@
     "angular": "latest",
     "bootstrap": "latest",
     "angular-ui-router": "^0.3.0",
-    "angular-mocks": "^1.5.5"
+    "angular-mocks": "^1.5.5",
+    "d3": "^3.5.17"
   }
 }

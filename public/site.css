@@ -28,3 +28,71 @@ footer {
     background-color: #f8f8f8;
     padding-top: 30px;
 }
+
+#map{
+    width:100%;
+    height:500px;
+}
+
+.stations, .stations svg {
+    position: absolute;
+}
+
+.stations svg {
+    width: 10px;
+    height: 10px;
+    font: 10px sans-serif;
+}
+
+
+.stations svg.marker {
+    overflow:visible;
+}
+.stations svg.marker text{
+    font-size:20px;
+}
+
+.stations circle {
+    fill: brown;
+    stroke: black;
+    stroke-width: 1.5px;
+}
+
+.lines {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    overflow:visible;
+}
+
+.lines svg {
+    position: absolute;
+    overflow:visible;
+}
+
+.lines path {
+    stroke-width: 3;
+    stroke:crimson;
+    fill: none;
+    opacity: .5;
+}
+
+.high-z-order{
+    z-index: 1000;
+}
+.gmnoprint, .gm-style-cc{
+    z-index: 1000;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+[disabled="disabled"]{
+    opacity: .5;
+}
+
+.pagination input{
+    width:40px;
+}

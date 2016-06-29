@@ -28,18 +28,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
-require("./server/routes");
-//require('./server/routes')(app);
+require('./server/routes')(app);
 
 mongoose.connect(config.db);
 
 app.listen(port);
 
 exports = module.exports = app;
-
-/*
-function requireRoutes(){
-    require("fs").readdirSync('./modules').forEach(function(file) {
-        require("./modules/" + file+ "/server/route")(app);
-    });
-}*/

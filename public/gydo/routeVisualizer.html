@@ -1,0 +1,63 @@
+<div class="container" id="route" ng-controller="routeVisualizerCtrl as route">
+    <button ng-click="route.loadTestRoute()" ng-hide="route.isRouteBuilt()">Get Test Route</button>
+    <h3 ng-show="route.isRouteBuilt()">{{route.distance}} Meter Route - Iteration {{route.currentCollectionIndex}} ({{route.isAtEnd() ? "Passed" : "Failed"}}) - Completion in {{route.timeOfRequest/1000.0}} seconds</h3>
+    <div id="map"></div>
+    <div class="row text-center">
+        <input type="text" ng-model="route.distance" ng-hide="route.isRouteBuilt()" />
+        <button ng-click="route.loadCustomRoute()" ng-hide="route.isRouteBuilt()">Get Custom Route</button>
+        <button ng-click="route.loadCustomRouteAndStepThrough()" ng-hide="route.isRouteBuilt()">Step Through Route</button>
+        <ul class="pagination pagination-sm">
+            <li class="page-item">
+                <button ng-click="route.goToStart()" ng-hide="route.hidePagination()" ng-disabled="route.isAtBeginning()">
+                    <span class="glyphicon glyphicon-step-backward"></span>
+                </button>
+            </li>
+            <li class="page-item">
+                <button ng-click="route.priorStepInCollection()" ng-hide="route.hidePagination()" ng-disabled="route.isAtBeginning()">
+                    <span class="glyphicon glyphicon-backward"></span>
+                </button>
+            </li>
+            <li class="page-item">
+                <input type="number" ng-model="route.currentCollectionIndex" ng-hide="route.hidePagination()" ng-change="route.onIndexChanged()" class="" />
+                <label ng-hide="route.hidePagination()">of {{ route.collection.length }}</label>
+            </li>
+            <li class="page-item">
+                <button ng-click="route.nextStepInCollection()" ng-hide="route.hidePagination()" ng-disabled="route.isAtEnd()">
+                    <span class="glyphicon glyphicon-forward"></span>
+                </button>
+            </li>
+            <li class="page-item">
+                <button ng-click="route.goToEnd()" ng-hide="route.hidePagination()" ng-disabled="route.isAtEnd()">
+                    <span class="glyphicon glyphicon-step-forward"></span>
+                </button>
+            </li>
+            <li class="page-item">
+                <button ng-click="route.resetMapForNewRoute()" ng-show="route.isRouteBuilt()">
+                    <span class="glyphicon glyphicon-ban-circle"></span>
+                </button>
+            </li>
+
+        </ul>
+        <!--<div class="col-centered col-lg-5">
+            <input type="text" ng-model="route.distance" />
+            <button ng-click="route.loadCustomRoute()" ng-show="route.collection.length == 0 && route.builtRoute == null">Get Custom Route</button>
+            <button ng-click="route.loadCustomRouteAndStepThrough()" ng-show="route.collection.length == 0 && route.builtRoute == null">Step Through Route</button>
+            <button ng-click="route.goToStart()" ng-hide="route.collection.length == 0" ng-disabled="route.currentCollectionIndex == 0">
+                <span class="glyphicon glyphicon-step-backward"></span>
+            </button>
+            <button ng-click="route.priorStepInCollection()" ng-hide="route.collection.length == 0" ng-disabled="route.currentCollectionIndex == 0">
+                <span class="glyphicon glyphicon-backward"></span>
+            </button>
+            <input type="number" ng-model="route.currentCollectionIndex" ng-hide="route.collection.length == 0" ng-change="route.onIndexChanged()" class="col-lg-2" />
+            <button ng-click="route.nextStepInCollection()" ng-hide="route.collection.length == 0" ng-disabled="route.currentCollectionIndex == route.collection.length - 1">
+                <span class="glyphicon glyphicon-forward"></span>
+            </button>
+            <button ng-click="route.goToEnd()" ng-hide="route.collection.length == 0" ng-disabled="route.currentCollectionIndex == route.collection.length - 1">
+                <span class="glyphicon glyphicon-step-forward"></span>
+            </button>
+            <button ng-click="route.resetMapForNewRoute()" ng-show="route.collection.length != 0 || route.builtRoute != null">
+                <span class="glyphicon glyphicon-ban-circle"></span>
+            </button>
+        </div>-->
+    </div>
+</div>

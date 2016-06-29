@@ -22,7 +22,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('about', {
             url: '/about',
             templateUrl: 'views/about.html'
+        })
+        .state('route', {
+            url: '/route',
+            templateUrl: 'gydo/routeVisualizer.html'
         });
+
 
 });
 
